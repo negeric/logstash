@@ -38,3 +38,5 @@ PFSENSE_ICMP_TSTAMP_REPLY (%{INT:icmp_tstamp_reply_id}),(%{INT:icmp_tstamp_reply
 PFSENSE_CARP_DATA (%{WORD:carp_type}),(%{INT:carp_ttl}),(%{INT:carp_vhid}),(%{INT:carp_version}),(%{INT:carp_advbase}),(%{INT:carp_advskew})
 PFSENSE_CHARON_NET %{WORD:direction} packet: from %{IP:from_ip}\[%{NUMBER:from_port}\] to %{IP:to_ip}\[%{NUMBER:to_port}\] \(%{INT:bytes} bytes\)
 PFSENSE_CHARON %{NUMBER:u_num}\[%{WORD:charon_type}\] <con%{INT:con_id}\|%{INT:con_subId}> %{GREEDYDATA:fw_message}
+
+DATE_YMD %{YEAR}/%{MONTHNUM}/%{MONTHDAY} %{TIME}
