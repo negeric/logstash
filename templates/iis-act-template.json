@@ -1,0 +1,45 @@
+{
+    "index_patterns": ["iis-act-*"],
+    "mappings" : {
+        "doc" : {
+            "properties" : {
+                "ApiMainMethod":    { "type": "keyword" },
+                "ApiSubMethod":     { "type": "keyword" },
+                "BytesReceived":    { "type": "long" },
+                "BytestSent":       { "type": "long" },
+                "CarId":            { "type": "long"},
+                "ClientIP":         { "type": "ip" },
+                "LoadBalancerIP":   { "type": "ip" },
+                "Method":           { "type": "keyword" },
+                "Protocol":         { "type": "keyword" },
+                "QueryString":      { "type": "keyword" },
+                "Referer":          { "type": "keyword" },
+                "Response":         { "type": "short" },
+                "ServerName":       { "type": "keyword" },
+                "ServerTimestamp":  { 
+                                        "type": "date",
+                                        "format": "yyyy-MM-dd HH:mm:ss"
+                                    },
+                "SiteId":           { "type": "short" },
+                "SubStatus":        { "type": "short" },
+                "TimeTakenMS":      { "type": "long" },
+                "TotalBytes":       { "type": "long" },
+                "URI":              { "type": "keyword" },
+                "UserAgent":        { "type": "keyword" },
+                "Username":         { "type": "keyword" },
+                "Website":          { "type": "keyword" },
+                "Win32Status":      { "type": "short" },
+                "beat":             { "type": "object" },
+
+                "geoip": {
+                    "properties": {
+                        "city_name":        { "type": "keyword" },
+                        "country_code2":    { "type": "keyword" },
+                        "location":         { "type": "geo_point" },
+                        "region_name":      { "type": "keyword" }   
+                    }
+                }                 
+            }
+        }
+    }
+}
